@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construye Firme | Construcción Residencial de Confianza</title>
+    <meta name="description" content="Construye Firme — Empresa de construcción especializada en habitaciones, bodegas, extensiones y edificaciones residenciales de hasta 2 pisos. Cotiza tu proyecto hoy.">
+    <meta name="keywords" content="construcción, habitaciones, bodegas, extensiones, remodelación, obra menor, construcción residencial">
+    <meta name="author" content="Construye Firme">
+    <meta property="og:title" content="Construye Firme | Construcción Residencial">
+    <meta property="og:description" content="Especialistas en construcción de habitaciones, bodegas, extensiones y proyectos residenciales de hasta 2 pisos.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ============ PRELOADER ============ -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <i class="fas fa-hard-hat"></i>
+            </div>
+            <p>Construye Firme</p>
+        </div>
+    </div>
+
+    <!-- ============ HEADER / NAV ============ -->
+    <header id="header" class="header">
+        <div class="container header-inner">
+            <a href="#inicio" class="logo" id="logo">
+                <i class="fas fa-helmet-safety"></i>
+                <span>Construye<strong>Firme</strong></span>
+            </a>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+                    <li><a href="#equipo" class="nav-link">Equipo</a></li>
+                    <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                    <li><a href="#contacto" class="nav-link nav-cta">Contáctanos</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ============ HERO CAROUSEL ============ -->
+    <section id="inicio" class="hero">
+        <div class="carousel" id="heroCarousel">
+            <div class="carousel-track">
+                <div class="carousel-slide active">
+                    <img src="images/hero-1.jpg" alt="Equipo de construcción trabajando en una extensión residencial">
+                    <div class="carousel-overlay"></div>
+                    <div class="carousel-content">
+                        <span class="carousel-badge">+ de 10 años de experiencia</span>
+                        <h1>Construimos el Espacio<br>que tu Familia Necesita</h1>
+                        <p>Habitaciones, bodegas, extensiones y más. Proyectos residenciales con calidad y compromiso.</p>
+                        <div class="carousel-actions">
+                            <a href="#contacto" class="btn btn-primary"><i class="fas fa-envelope"></i> Solicita tu Cotización</a>
+                            <a href="#proyectos" class="btn btn-outline"><i class="fas fa-images"></i> Ver Proyectos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/hero-2.jpg" alt="Equipo de trabajo unido en obra">
+                    <div class="carousel-overlay"></div>
+                    <div class="carousel-content">
+                        <span class="carousel-badge">Equipo comprometido</span>
+                        <h2>Un Equipo Pequeño,<br>Grandes Resultados</h2>
+                        <p>Somos un grupo de 6 profesionales dedicados, donde cada proyecto recibe atención personalizada.</p>
+                        <div class="carousel-actions">
+                            <a href="#equipo" class="btn btn-primary"><i class="fas fa-users"></i> Conoce al Equipo</a>
+                            <a href="#nosotros" class="btn btn-outline"><i class="fas fa-building"></i> Sobre Nosotros</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="images/hero-3.jpg" alt="Casa residencial terminada al atardecer">
+                    <div class="carousel-overlay"></div>
+                    <div class="carousel-content">
+                        <span class="carousel-badge">Calidad garantizada</span>
+                        <h2>Tu Proyecto, Nuestra Pasión<br>Tu Hogar, Nuestro Compromiso</h2>
+                        <p>Cada ladrillo que colocamos está respaldado por la dedicación de un equipo que ama lo que hace.</p>
+                        <div class="carousel-actions">
+                            <a href="#contacto" class="btn btn-primary"><i class="fas fa-phone"></i> Llámanos Hoy</a>
+                            <a href="#servicios" class="btn btn-outline"><i class="fas fa-tools"></i> Nuestros Servicios</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+            <div class="carousel-dots" id="carouselDots">
+                <button class="dot active" data-index="0" aria-label="Diapositiva 1"></button>
+                <button class="dot" data-index="1" aria-label="Diapositiva 2"></button>
+                <button class="dot" data-index="2" aria-label="Diapositiva 3"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ STATS BAR ============ -->
+    <section class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-item" data-count="150">
+                <i class="fas fa-home"></i>
+                <span class="stat-number">0</span>
+                <span class="stat-label">Proyectos Completados</span>
+            </div>
+            <div class="stat-item" data-count="10">
+                <i class="fas fa-calendar-check"></i>
+                <span class="stat-number">0</span>
+                <span class="stat-label">Años de Experiencia</span>
+            </div>
+            <div class="stat-item" data-count="98">
+                <i class="fas fa-smile"></i>
+                <span class="stat-number">0</span>
+                <span class="stat-label">% Clientes Satisfechos</span>
+            </div>
+            <div class="stat-item" data-count="6">
+                <i class="fas fa-hard-hat"></i>
+                <span class="stat-number">0</span>
+                <span class="stat-label">Profesionales Dedicados</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SOBRE NOSOTROS ============ -->
+    <section id="nosotros" class="section about">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag"><i class="fas fa-info-circle"></i> Conócenos</span>
+                <h2 class="section-title">Sobre <span class="text-accent">Nosotros</span></h2>
+                <p class="section-subtitle">Somos un equipo cercano, responsable y comprometido con cada proyecto.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-content" data-animate>
+                    <h3>Una asociación que construye con el corazón</h3>
+                    <p><strong>Construye Firme</strong> nació en 2016 como una asociación de 6 trabajadores apasionados por la construcción residencial. Nos especializamos en obras de escala humana: habitaciones, bodegas, extensiones, muros perimetrales y todo tipo de edificaciones de hasta 2 pisos.</p>
+                    <p>Lo que nos distingue es el trato personal. Al ser un equipo pequeño, cada cliente habla directamente con los capataces y maestros de obra. No hay intermediarios. Tu proyecto es nuestro proyecto.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Presupuestos transparentes sin letra chica</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Materiales de primera calidad</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Supervisión directa por los capataces</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Garantía de 2 años en toda obra entregada</span>
+                        </div>
+                        <div class="about-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Plazos cumplidos y avance con reportes fotográficos</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual" data-animate>
+                    <div class="about-card-stack">
+                        <div class="about-card" style="--card-rotate: -3deg;">
+                            <i class="fas fa-award"></i>
+                            <h4>Experiencia</h4>
+                            <p>+10 años en el rubro</p>
+                        </div>
+                        <div class="about-card" style="--card-rotate: 2deg;">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Confianza</h4>
+                            <p>98% clientes satisfechos</p>
+                        </div>
+                        <div class="about-card" style="--card-rotate: -1deg;">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Garantía</h4>
+                            <p>2 años en toda obra</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section id="servicios" class="section services">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag"><i class="fas fa-tools"></i> Lo que Hacemos</span>
+                <h2 class="section-title">Nuestros <span class="text-accent">Servicios</span></h2>
+                <p class="section-subtitle">Cubrimos todas las necesidades de construcción residencial menor.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-animate>
+                    <div class="service-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Construcción de Habitaciones</h3>
+                    <p>Ampliamos tu hogar con nuevas habitaciones diseñadas a tu medida. Desde dormitorios hasta oficinas en casa, construimos el espacio que necesitas.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Dormitorios individuales y dobles</li>
+                        <li><i class="fas fa-check"></i> Cuartos de estudio u oficina</li>
+                        <li><i class="fas fa-check"></i> Cuartos de servicio</li>
+                    </ul>
+                </div>
+                <div class="service-card featured" data-animate>
+                    <div class="service-badge">Más Solicitado</div>
+                    <div class="service-icon">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3>Bodegas y Almacenes</h3>
+                    <p>Construimos bodegas funcionales y duraderas para almacenamiento seguro, tanto residencial como para pequeños negocios.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Bodegas residenciales</li>
+                        <li><i class="fas fa-check"></i> Almacenes para negocio</li>
+                        <li><i class="fas fa-check"></i> Garajes y cocheras</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-animate>
+                    <div class="service-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3>Extensiones y Ampliaciones</h3>
+                    <p>¿Tu casa se quedó chica? Ampliamos tu propiedad con extensiones que se integran perfectamente al diseño existente.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Segundo piso completo</li>
+                        <li><i class="fas fa-check"></i> Ampliación de cocina o sala</li>
+                        <li><i class="fas fa-check"></i> Terrazas techadas</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-animate>
+                    <div class="service-icon">
+                        <i class="fas fa-bath"></i>
+                    </div>
+                    <h3>Baños y Cocinas</h3>
+                    <p>Construcción y remodelación completa de baños y cocinas, desde la obra gruesa hasta los acabados finales.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Instalación de cerámicas</li>
+                        <li><i class="fas fa-check"></i> Plomería completa</li>
+                        <li><i class="fas fa-check"></i> Mesones y muebles empotrados</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-animate>
+                    <div class="service-icon">
+                        <i class="fas fa-archway"></i>
+                    </div>
+                    <h3>Muros y Cercos</h3>
+                    <p>Levantamos muros perimetrales, cercos divisorios y portones para proteger y delimitar tu propiedad con seguridad.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Muros de ladrillo y bloque</li>
+                        <li><i class="fas fa-check"></i> Cercos perimetrales</li>
+                        <li><i class="fas fa-check"></i> Portones de acceso</li>
+                    </ul>
+                </div>
+                <div class="service-card" data-animate>
+                    <div class="service-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3>Acabados y Terminaciones</h3>
+                    <p>Damos el toque final a tu proyecto: estuco, pintura, pisos, cielos y todos los detalles que hacen la diferencia.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Estuco y empaste</li>
+                        <li><i class="fas fa-check"></i> Pintura interior y exterior</li>
+                        <li><i class="fas fa-check"></i> Instalación de pisos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROCESO DE TRABAJO ============ -->
+    <section class="section process">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag"><i class="fas fa-clipboard-list"></i> Cómo Trabajamos</span>
+                <h2 class="section-title">Nuestro <span class="text-accent">Proceso</span></h2>
+                <p class="section-subtitle">Transparencia total de inicio a fin.</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step" data-animate>
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Visita y Evaluación</h3>
+                        <p>Visitamos tu terreno o propiedad para evaluar las condiciones, tomar medidas y escuchar exactamente lo que necesitas.</p>
+                    </div>
+                </div>
+                <div class="process-step" data-animate>
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Presupuesto Detallado</h3>
+                        <p>Te entregamos un presupuesto claro y desglosado: materiales, mano de obra y tiempos estimados. Sin sorpresas.</p>
+                    </div>
+                </div>
+                <div class="process-step" data-animate>
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Inicio de Obra</h3>
+                        <p>Con tu aprobación comenzamos. Nuestros capataces supervisan cada etapa y te envían reportes fotográficos del avance.</p>
+                    </div>
+                </div>
+                <div class="process-step" data-animate>
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Entrega y Garantía</h3>
+                        <p>Entregamos la obra terminada con limpieza incluida. Cada proyecto cuenta con 2 años de garantía estructural.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROYECTOS DESTACADOS ============ -->
+    <section id="proyectos" class="section projects">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag"><i class="fas fa-images"></i> Portafolio</span>
+                <h2 class="section-title">Proyectos <span class="text-accent">Destacados</span></h2>
+                <p class="section-subtitle">Algunos de nuestros trabajos más recientes que hablan por nosotros.</p>
+            </div>
+            <div class="projects-filter" data-animate>
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="habitacion">Habitaciones</button>
+                <button class="filter-btn" data-filter="bodega">Bodegas</button>
+                <button class="filter-btn" data-filter="extension">Extensiones</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="habitacion" data-animate>
+                    <div class="project-image">
+                        <img src="images/project-room.jpg" alt="Proyecto de habitación terminada" loading="lazy">
+                        <div class="project-overlay">
+                            <span class="project-tag">Habitación</span>
+                            <h3>Dormitorio Principal</h3>
+                            <p>Construcción de habitación principal con baño en suite y closet empotrado.</p>
+                            <div class="project-meta">
+                                <span><i class="fas fa-ruler-combined"></i> 28 m²</span>
+                                <span><i class="fas fa-clock"></i> 3 semanas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="bodega" data-animate>
+                    <div class="project-image">
+                        <img src="images/project-warehouse.jpg" alt="Bodega de almacenamiento moderna" loading="lazy">
+                        <div class="project-overlay">
+                            <span class="project-tag">Bodega</span>
+                            <h3>Bodega Comercial</h3>
+                            <p>Construcción de bodega para almacén de insumos con portón de acceso vehicular.</p>
+                            <div class="project-meta">
+                                <span><i class="fas fa-ruler-combined"></i> 65 m²</span>
+                                <span><i class="fas fa-clock"></i> 5 semanas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="extension" data-animate>
+                    <div class="project-image">
+                        <img src="images/project-extension.jpg" alt="Extensión moderna de vivienda" loading="lazy">
+                        <div class="project-overlay">
+                            <span class="project-tag">Extensión</span>
+                            <h3>Ampliación con Terraza</h3>
+                            <p>Extensión de sala-comedor con terraza acristalada y vista al jardín.</p>
+                            <div class="project-meta">
+                                <span><i class="fas fa-ruler-combined"></i> 42 m²</span>
+                                <span><i class="fas fa-clock"></i> 6 semanas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="habitacion" data-animate>
+                    <div class="project-image">
+                        <img src="images/hero-3.jpg" alt="Casa residencial completa" loading="lazy">
+                        <div class="project-overlay">
+                            <span class="project-tag">Habitación</span>
+                            <h3>Casa Familiar 2 Pisos</h3>
+                            <p>Construcción completa de vivienda familiar de 2 pisos con 3 dormitorios.</p>
+                            <div class="project-meta">
+                                <span><i class="fas fa-ruler-combined"></i> 120 m²</span>
+                                <span><i class="fas fa-clock"></i> 14 semanas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ EQUIPO ============ -->
+    <section id="equipo" class="section team">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag"><i class="fas fa-users"></i> Nuestro Equipo</span>
+                <h2 class="section-title">Los Profesionales <span class="text-accent">Detrás de la Obra</span></h2>
+                <p class="section-subtitle">Un equipo pequeño pero con gran corazón y experiencia.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card" data-animate>
+                    <div class="team-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Carlos Mendoza</h3>
+                    <span class="team-role">Capataz Principal</span>
+                    <p>15 años de experiencia liderando obras residenciales. Especialista en estructuras de concreto armado.</p>
+                </div>
+                <div class="team-card" data-animate>
+                    <div class="team-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Roberto Vásquez</h3>
+                    <span class="team-role">Capataz Segundo</span>
+                    <p>12 años en el rubro. Experto en terminaciones, acabados y control de calidad de materiales.</p>
+                </div>
+                <div class="team-card" data-animate>
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Luis Paredes</h3>
+                    <span class="team-role">Maestro Albañil</span>
+                    <p>Especialista en levantamiento de muros, fundaciones y trabajos de obra gruesa.</p>
+                </div>
+                <div class="team-card" data-animate>
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Miguel Torres</h3>
+                    <span class="team-role">Maestro Albañil</span>
+                    <p>Especializado en instalaciones sanitarias, electricidad básica y terminaciones.</p>
+                </div>
+                <div class="team-card" data-animate>
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Andrés Riquelme</h3>
+                    <span class="team-role">Oficial</span>
+                    <p>Apoyo versátil en obra. Manejo de herramientas eléctricas y preparación de mezclas.</p>
+                </div>
+                <div class="team-card" data-animate>
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Pedro Soto</h3>
+                    <span class="team-role">Oficial</span>
+                    <p>Trabajo de fierro, encofrado y operación de maquinaria menor de construcción.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TESTIMONIOS ============ -->
+    <section id="testimonios" class="section testimonials">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag"><i class="fas fa-quote-left"></i> Testimonios</span>
+                <h2 class="section-title">Lo que Dicen <span class="text-accent">Nuestros Clientes</span></h2>
+                <p class="section-subtitle">La satisfacción de nuestros clientes es nuestra mejor carta de presentación.</p>
+            </div>
+            <div class="testimonials-slider" id="testimonialsSlider">
+                <div class="testimonial-track">
+                    <div class="testimonial-card active" data-animate>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>"Contratamos a Construye Firme para hacer una bodega en el patio trasero y quedamos impresionados. Cumplieron los plazos, el precio fue justo y la calidad es excelente. Don Carlos nos explicaba todo el proceso y nos mandaba fotos a diario."</blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                            <div>
+                                <strong>María Fernández</strong>
+                                <span>Bodega residencial — Sector Norte</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-animate>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>"Necesitábamos un segundo piso urgente porque creció la familia. El equipo de Roberto hizo un trabajo impecable. Ni una filtración, todo nivelado y pintado como nuevo. Los recomiendo al 100%."</blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                            <div>
+                                <strong>Juan Pablo Herrera</strong>
+                                <span>Segundo piso — Sector Centro</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-animate>
+                        <div class="testimonial-stars">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <blockquote>"Me hicieron una extensión de cocina-comedor hermosa. Lo que más valoré es que son un grupo chico donde todos se conocen. No subcontratan, trabajan ellos directamente. Eso da confianza."</blockquote>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                            <div>
+                                <strong>Claudia Morales</strong>
+                                <span>Extensión cocina — Sector Sur</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-nav">
+                    <button class="testimonial-btn" id="testPrev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+                    <div class="testimonial-dots" id="testimonialDots">
+                        <button class="dot active" data-index="0"></button>
+                        <button class="dot" data-index="1"></button>
+                        <button class="dot" data-index="2"></button>
+                    </div>
+                    <button class="testimonial-btn" id="testNext" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA BANNER ============ -->
+    <section class="cta-banner">
+        <div class="container cta-inner">
+            <div class="cta-content">
+                <h2>¿Tienes un Proyecto en Mente?</h2>
+                <p>Cuéntanos tu idea y te entregamos una cotización gratuita sin compromiso. También buscamos jornaleros para nuevas obras.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="#contacto" class="btn btn-primary btn-lg"><i class="fas fa-phone-alt"></i> Cotiza Gratis</a>
+                <a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section id="contacto" class="section contact">
+        <div class="container">
+            <div class="section-header" data-animate>
+                <span class="section-tag"><i class="fas fa-envelope"></i> Escríbenos</span>
+                <h2 class="section-title">Formulario de <span class="text-accent">Contacto</span></h2>
+                <p class="section-subtitle">Ya seas cliente interesado o jornalero buscando trabajo, queremos saber de ti.</p>
+            </div>
+            <div class="contact-grid">
+                <!-- Información de contacto -->
+                <div class="contact-info" data-animate>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Av. Las Palmeras 1240, Sector Norte<br>Ciudad Ejemplo, Región Central</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+56 9 1234 5678<br>+56 9 8765 4321</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Correo Electrónico</h4>
+                            <p>contacto@construyefirme.cl<br>cotizaciones@construyefirme.cl</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4>Horario de Atención</h4>
+                            <p>Lunes a Viernes: 08:00 – 18:00<br>Sábados: 09:00 – 13:00</p>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <h4>Síguenos en Redes</h4>
+                        <div class="social-links">
+                            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok" class="social-link"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="social-link"><i class="fab fa-youtube"></i></a>
+                            <a href="https://wa.me/56912345678" target="_blank" rel="noopener" aria-label="WhatsApp" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="contact-form-wrapper" data-animate>
+                    <!-- Tabs para tipo de contacto -->
+                    <div class="contact-tabs">
+                        <button class="contact-tab active" data-tab="cliente" id="tabCliente">
+                            <i class="fas fa-user"></i> Soy Cliente
+                        </button>
+                        <button class="contact-tab" data-tab="jornalero" id="tabJornalero">
+                            <i class="fas fa-hard-hat"></i> Busco Trabajo
+                        </button>
+                    </div>
+
+                    <!-- Formulario Cliente -->
+                    <form id="formCliente" class="contact-form active" novalidate>
+                        <div class="form-group">
+                            <label for="clienteNombre">Nombre Completo *</label>
+                            <input type="text" id="clienteNombre" name="nombre" required placeholder="Ej: María Fernández López">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="clienteEmail">Correo Electrónico *</label>
+                                <input type="email" id="clienteEmail" name="email" required placeholder="correo@ejemplo.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="clienteTelefono">Teléfono *</label>
+                                <input type="tel" id="clienteTelefono" name="telefono" required placeholder="+56 9 XXXX XXXX">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="clienteServicio">Tipo de Proyecto</label>
+                            <select id="clienteServicio" name="servicio">
+                                <option value="">Selecciona un servicio</option>
+                                <option value="habitacion">Construcción de Habitación</option>
+                                <option value="bodega">Bodega o Almacén</option>
+                                <option value="extension">Extensión / Ampliación</option>
+                                <option value="bano-cocina">Baño o Cocina</option>
+                                <option value="muro">Muros y Cercos</option>
+                                <option value="acabados">Acabados y Terminaciones</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="clienteMensaje">Cuéntanos sobre tu proyecto *</label>
+                            <textarea id="clienteMensaje" name="mensaje" rows="4" required placeholder="Describe brevemente qué necesitas: tipo de obra, dimensiones aproximadas, ubicación, etc."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="submitCliente">
+                            <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                        </button>
+                    </form>
+
+                    <!-- Formulario Jornalero -->
+                    <form id="formJornalero" class="contact-form" novalidate>
+                        <div class="form-notice">
+                            <i class="fas fa-info-circle"></i>
+                            <p>¿Eres albañil, oficial o ayudante y buscas trabajo por jornada? Déjanos tus datos y te contactamos cuando haya obra disponible.</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="jornaleroNombre">Nombre Completo *</label>
+                            <input type="text" id="jornaleroNombre" name="nombre" required placeholder="Ej: Pedro Martínez">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jornaleroTelefono">Teléfono *</label>
+                                <input type="tel" id="jornaleroTelefono" name="telefono" required placeholder="+56 9 XXXX XXXX">
+                            </div>
+                            <div class="form-group">
+                                <label for="jornaleroEspecialidad">Especialidad</label>
+                                <select id="jornaleroEspecialidad" name="especialidad">
+                                    <option value="">Selecciona tu oficio</option>
+                                    <option value="albanil">Albañil / Maestro de Obra</option>
+                                    <option value="oficial">Oficial de Construcción</option>
+                                    <option value="ayudante">Ayudante / Peón</option>
+                                    <option value="fierrero">Fierrero / Armador</option>
+                                    <option value="carpintero">Carpintero</option>
+                                    <option value="electricista">Electricista</option>
+                                    <option value="gasfiter">Gasfíter / Plomero</option>
+                                    <option value="pintor">Pintor</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="jornaleroExperiencia">Años de Experiencia</label>
+                            <select id="jornaleroExperiencia" name="experiencia">
+                                <option value="">Selecciona</option>
+                                <option value="0-1">Menos de 1 año</option>
+                                <option value="1-3">1 a 3 años</option>
+                                <option value="3-5">3 a 5 años</option>
+                                <option value="5-10">5 a 10 años</option>
+                                <option value="10+">Más de 10 años</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="jornaleroDisponibilidad">Disponibilidad</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="disponibilidad" value="lunes-viernes"> Lunes a Viernes
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="disponibilidad" value="sabados"> Sábados
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="disponibilidad" value="inmediata"> Disponibilidad inmediata
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="jornaleroMensaje">Información adicional</label>
+                            <textarea id="jornaleroMensaje" name="mensaje" rows="3" placeholder="Cuéntanos brevemente sobre tu experiencia, herramientas propias, zona donde vives, etc."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="submitJornalero">
+                            <i class="fas fa-hard-hat"></i> Enviar Postulación
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ MAPA ============ -->
+    <section class="map-section">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.0!2d-70.65!3d-33.44!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDI2JzI0LjAiUyA3MMKwMzknMDAuMCJX!5e0!3m2!1ses!2scl!4v1"
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de Construye Firme">
+        </iframe>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#inicio" class="logo">
+                        <i class="fas fa-helmet-safety"></i>
+                        <span>Construye<strong>Firme</strong></span>
+                    </a>
+                    <p>Asociación de constructores dedicados a hacer realidad tus proyectos de edificación residencial con calidad, compromiso y trato personal.</p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/56912345678" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#servicios">Habitaciones</a></li>
+                        <li><a href="#servicios">Bodegas</a></li>
+                        <li><a href="#servicios">Extensiones</a></li>
+                        <li><a href="#servicios">Baños y Cocinas</a></li>
+                        <li><a href="#servicios">Muros y Cercos</a></li>
+                        <li><a href="#servicios">Acabados</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto Directo</h4>
+                    <ul>
+                        <li><i class="fas fa-phone-alt"></i> +56 9 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> contacto@construyefirme.cl</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Las Palmeras 1240</li>
+                        <li><i class="fas fa-clock"></i> Lun-Vie: 08:00 – 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Construye Firme. Todos los derechos reservados.</p>
+                <p>Diseñado con <i class="fas fa-heart" style="color: var(--accent);"></i> para construir sueños.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ BOTÓN WHATSAPP FLOTANTE ============ -->
+    <a href="https://wa.me/56912345678" target="_blank" rel="noopener" class="whatsapp-float" id="whatsappFloat" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¡Escríbenos!</span>
+    </a>
+
+    <!-- ============ BOTÓN VOLVER ARRIBA ============ -->
+    <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

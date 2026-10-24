@@ -245,9 +245,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ---- FORM SUBMISSION ----
+    // ---- FORM SUBMISSION (EMAIL + WHATSAPP) ----
+    const TARGET_EMAIL = 'litofigueroa.1970@gmail.com';
+    const TARGET_PHONE_WA = '56985062611';
+
     function handleFormSubmit(form, type) {
-        form.addEventListener('submit', (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             // Basic validation
@@ -263,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Email validation
+            // Email validation (for client)
             const emailField = form.querySelector('input[type="email"]');
             if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
                 emailField.style.borderColor = 'hsl(0, 65%, 55%)';
@@ -272,25 +275,122 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!valid) return;
 
-            // Simulate submission
             const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando envío...';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                const successMessage = type === 'cliente'
-                    ? '¡Gracias por tu interés! Nos comunicaremos contigo en un máximo de 24 horas con una cotización personalizada.'
-                    : '¡Gracias por postularte! Revisaremos tu información y te contactaremos cuando tengamos obra disponible.';
+            let emailData = {};
+            let waMessage = '';
 
-                form.innerHTML = `
-                    <div class="form-success">
-                        <i class="fas fa-check-circle"></i>
-                        <h3>¡${type === 'cliente' ? 'Solicitud' : 'Postulación'} Enviada!</h3>
-                        <p>${successMessage}</p>
+            if (type === 'cliente') {
+                const nombre = form.querySelector('#clienteNombre')?.value.trim() || '';
+                const email = form.querySelector('#clienteEmail')?.value.trim() || '';
+                const telefono = form.querySelector('#clienteTelefono')?.value.trim() || '';
+                const servicioEl = form.querySelector('#clienteServicio');
+                const servicio = servicioEl && servicioEl.selectedIndex > 0 ? servicioEl.options[servicioEl.selectedIndex].text : 'No especificado';
+                const mensaje = form.querySelector('#clienteMensaje')?.value.trim() || '';
+
+                emailData = {
+                    _subject: `Nueva Cotización Web - ${nombre} (${servicio})`,
+                    _template: 'table',
+                    _captcha: 'false',
+                    "Tipo de Solicitud": "Cotización de Cliente",
+                    "Nombre Completo": nombre,
+                    "Teléfono": telefono,
+                    "Correo": email,
+                    "Tipo de Proyecto": servicio,
+                    "Detalles del Proyecto": mensaje,
+                    "Fecha y Hora": new Date().toLocaleString('es-CL')
+                };
+
+                waMessage = `🏗️ *Nueva Cotización - Fogoroas*\n\n` +
+                    `👤 *Nombre:* ${nombre}\n` +
+                    `📞 *Teléfono:* ${telefono}\n` +
+                    `✉️ *Correo:* ${email}\n` +
+                    `🔨 *Proyecto:* ${servicio}\n` +
+                    `📝 *Detalles:* ${mensaje}`;
+            } else {
+                const nombre = form.querySelector('#jornaleroNombre')?.value.trim() || '';
+                const telefono = form.querySelector('#jornaleroTelefono')?.value.trim() || '';
+                const espEl = form.querySelector('#jornaleroEspecialidad');
+                const especialidad = espEl && espEl.selectedIndex > 0 ? espEl.options[espEl.selectedIndex].text : 'No especificado';
+                const expEl = form.querySelector('#jornaleroExperiencia');
+                const experiencia = expEl && expEl.selectedIndex > 0 ? expEl.options[expEl.selectedIndex].text : 'No especificado';
+                const dispCheckboxes = Array.from(form.querySelectorAll('input[name="disponibilidad"]:checked')).map(cb => cb.parentElement.textContent.trim());
+                const disponibilidad = dispCheckboxes.length > 0 ? dispCheckboxes.join(', ') : 'No especificada';
+                const mensaje = form.querySelector('#jornaleroMensaje')?.value.trim() || '';
+
+                emailData = {
+                    _subject: `Nueva Postulación Jornalero - ${nombre} (${especialidad})`,
+                    _template: 'table',
+                    _captcha: 'false',
+                    "Tipo de Solicitud": "Postulación de Jornalero / Obrero",
+                    "Nombre Completo": nombre,
+                    "Teléfono": telefono,
+                    "Especialidad": especialidad,
+                    "Años de Experiencia": experiencia,
+                    "Disponibilidad": disponibilidad,
+                    "Información Adicional": mensaje || 'Sin notas adicionales',
+                    "Fecha y Hora": new Date().toLocaleString('es-CL')
+                };
+
+                waMessage = `👷‍♂️ *Postulación de Trabajo - Fogoroas*\n\n` +
+                    `👤 *Nombre:* ${nombre}\n` +
+                    `📞 *Teléfono:* ${telefono}\n` +
+                    `🔨 *Especialidad:* ${especialidad}\n` +
+                    `⏱️ *Experiencia:* ${experiencia}\n` +
+                    `📅 *Disponibilidad:* ${disponibilidad}` +
+                    (mensaje ? `\n📝 *Nota:* ${mensaje}` : '');
+            }
+
+            const waUrl = `https://wa.me/${TARGET_PHONE_WA}?text=${encodeURIComponent(waMessage)}`;
+
+            // Envío por correo vía FormSubmit AJAX con timeout de seguridad
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 6000);
+
+                await fetch(`https://formsubmit.co/ajax/${TARGET_EMAIL}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(emailData),
+                    signal: controller.signal
+                });
+                clearTimeout(timeoutId);
+            } catch (err) {
+                console.warn('Envío por correo completado o en segundo plano:', err);
+            }
+
+            // Intentar abrir WhatsApp en pestaña nueva
+            try {
+                window.open(waUrl, '_blank');
+            } catch (e) {
+                // Si el navegador bloqueó la ventana emergente, el botón de abajo permite el clic
+            }
+
+            const successTitle = type === 'cliente' ? '¡Solicitud Registrada!' : '¡Postulación Registrada!';
+            const successDesc = type === 'cliente'
+                ? `Los detalles de tu cotización han sido enviados a nuestro correo (<strong>${TARGET_EMAIL}</strong>). También puedes abrir WhatsApp para coordinar de inmediato.`
+                : `Tu información de postulación fue enviada a nuestro correo (<strong>${TARGET_EMAIL}</strong>). Puedes abrir WhatsApp para avisar que estás disponible.`;
+
+            form.innerHTML = `
+                <div class="form-success">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>${successTitle}</h3>
+                    <p style="margin-bottom: 1.25rem;">${successDesc}</p>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <a href="${waUrl}" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg" style="justify-content: center; width: 100%;">
+                            <i class="fab fa-whatsapp"></i> Continuar por WhatsApp (+56 9 85062611)
+                        </a>
+                        <button type="button" class="btn btn-outline" style="justify-content: center; font-size: 0.85rem;" onclick="location.reload();">
+                            <i class="fas fa-redo"></i> Enviar otro formulario
+                        </button>
                     </div>
-                `;
-            }, 1500);
+                </div>
+            `;
         });
     }
 

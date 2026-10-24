@@ -1082,30 +1082,40 @@ button {
 .testimonials-slider {
     max-width: 700px;
     margin: 0 auto;
-    overflow: hidden;
+    position: relative;
 }
 
 .testimonial-track {
+    display: grid;
+    grid-template-columns: 1fr;
     position: relative;
-    min-height: 300px;
+    width: 100%;
 }
 
 .testimonial-card {
-    position: absolute;
-    inset: 0;
+    grid-area: 1 / 1;
     background: var(--surface);
     border: 1px solid var(--gray-200);
     border-radius: var(--radius-lg);
     padding: var(--space-2xl);
     opacity: 0;
-    transform: translateX(40px);
-    transition: all 0.5s ease;
+    visibility: hidden;
+    transform: translateX(30px);
+    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
     pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: var(--shadow-sm);
 }
 .testimonial-card.active {
     opacity: 1;
+    visibility: visible;
     transform: translateX(0);
     pointer-events: auto;
+    z-index: 1;
 }
 
 .testimonial-stars {
@@ -1125,6 +1135,7 @@ button {
     position: relative;
     padding-left: var(--space-lg);
     border-left: 3px solid var(--primary-light);
+    flex-grow: 1;
 }
 
 .testimonial-author {
@@ -1856,6 +1867,23 @@ button {
     .carousel-actions .btn {
         justify-content: center;
     }
+
+    /* Testimonios responsive */
+    .testimonials-slider {
+        padding: 0 var(--space-xs);
+    }
+    .testimonial-card {
+        padding: var(--space-xl) var(--space-lg);
+    }
+    .testimonial-card blockquote {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        padding-left: var(--space-md);
+        margin-bottom: var(--space-lg);
+    }
+    .testimonial-stars {
+        margin-bottom: var(--space-md);
+    }
 }
 
 @media (max-width: 480px) {
@@ -1864,5 +1892,24 @@ button {
     }
     .checkbox-group {
         flex-direction: column;
+    }
+
+    .testimonial-card {
+        padding: var(--space-lg) var(--space-md);
+    }
+    .testimonial-card blockquote {
+        font-size: 0.9rem;
+        line-height: 1.55;
+        padding-left: var(--space-sm);
+        margin-bottom: var(--space-md);
+    }
+    .author-avatar i {
+        font-size: 2.1rem;
+    }
+    .testimonial-author strong {
+        font-size: 0.95rem;
+    }
+    .testimonial-author span {
+        font-size: 0.8rem;
     }
 }
